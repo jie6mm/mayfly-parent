@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.0</version>
+    </parent>
+
+    <!--  gav  -->
+    <groupId>com.jie6mm.mayfly</groupId>
+    <artifactId>mayfly-parent</artifactId>
+    <version>${mayfly.version}</version>
+
+    <!--  pom  -->
+    <packaging>pom</packaging>
+
+    <!--  project-info  -->
+    <name>mayfly-parent</name>
+    <description>mayfly-parent</description>
+
+    <!--  modules  -->
+    <modules>
+        <module>mayfly-api</module>
+        <module>mayfly-biz</module>
+        <module>mayfly-core</module>
+        <module>mayfly-demo</module>
+        <module>mayfly-pojo</module>
+        <module>mayfly-test</module>
+        <module>mayfly-tool</module>
+    </modules>
+
+    <!--  project-dependency-version  -->
+    <properties>
+        <java.version>11</java.version>
+        <mayfly.version>1.0.0</mayfly.version>
+        <spring-boot.version>2.7.0</spring-boot.version>
+    </properties>
+
+    <!--  dependencyManagement  -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jie6mm.mayfly</groupId>
+                <artifactId>mayfly-core</artifactId>
+                <version>${mayfly.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jie6mm.mayfly</groupId>
+                <artifactId>mayfly-tool</artifactId>
+                <version>${mayfly.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jie6mm.mayfly</groupId>
+                <artifactId>mayfly-biz</artifactId>
+                <version>${mayfly.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--  dependencies  -->
+    <dependencies>
+
+    </dependencies>
+</project>

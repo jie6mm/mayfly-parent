@@ -1,0 +1,19 @@
+# project
+target/
+classes/
+logs/
+
+# MacOS
+.DS_Store
+
+# IntelliJ IDEA
+.idea
+.mvn
+*.iws
+*.iml
+*.ipr
+mvnw
+mvnw.cmd
+
+# VS Code
+.vscode/
