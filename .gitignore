@@ -3,9 +3,6 @@ target/
 classes/
 logs/
 
-# MacOS
-.DS_Store
-
 # IntelliJ IDEA
 .idea
 .mvn
@@ -17,3 +14,9 @@ mvnw.cmd
 
 # VS Code
 .vscode/
+
+# MacOS
+.DS_Store
+
+# Temporary
+*.dtmp
