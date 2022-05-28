@@ -19,4 +19,6 @@ mvnw.cmd
 .DS_Store
 
 # Temporary
+## drawio
 *.dtmp
+*.bkp
