@@ -1,0 +1,14 @@
+${AnsiColor.BRIGHT_BLUE}
+
+                               ,---. ,--.
+,--,--,--.  ,--,--. ,--. ,--. /  .-' |  | ,--. ,--.
+|        | ' ,-.  |  \  '  /  |  `-, |  |  \  '  /
+|  |  |  | \ '-'  |   \   '   |  .-' |  |   \   '
+`--`--`--'  `--`--' .-'  /    `--'   `--' .-'  /
+                    `---'                 `---'
+
+${AnsiColor.BRIGHT_GREEN}
+Mayfly Version: 1.0.0
+Java Version: ${java.version}
+Spring Boot Version: ${spring-boot.version}
+${AnsiColor.DEFAULT}

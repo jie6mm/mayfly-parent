@@ -36,6 +36,10 @@
         <java.version>11</java.version>
         <mayfly.version>1.0.0</mayfly.version>
         <spring-boot.version>2.7.0</spring-boot.version>
+        <guava.version>31.1-jre</guava.version>
+        <apache-lang3.version>3.9</apache-lang3.version>
+        <druid.version>1.2.9</druid.version>
+        <mybatis.version>2.2.2</mybatis.version>
     </properties>
 
     <!--  dependencyManagement  -->
@@ -52,7 +56,7 @@
             <!--  mayfly  -->
             <dependency>
                 <groupId>com.jie6mm.mayfly</groupId>
-                <artifactId>mayfly-core</artifactId>
+                <artifactId>mayfly-pojo</artifactId>
                 <version>${mayfly.version}</version>
             </dependency>
             <dependency>
@@ -62,20 +66,42 @@
             </dependency>
             <dependency>
                 <groupId>com.jie6mm.mayfly</groupId>
+                <artifactId>mayfly-core</artifactId>
+                <version>${mayfly.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jie6mm.mayfly</groupId>
                 <artifactId>mayfly-biz</artifactId>
                 <version>${mayfly.version}</version>
+            </dependency>
+            <!--  guava  -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!--  apache-lang3  -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache-lang3.version}</version>
+            </dependency>
+            <!--  druid  -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
             </dependency>
             <!--  mybatis  -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>2.2.2</version>
+                <version>${mybatis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <!--  dependencies  -->
     <dependencies>
-
     </dependencies>
 </project>

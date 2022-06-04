@@ -1,5 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.jie6mm.mayfly.core.test.HelloSpringBean,\
-com.jie6mm.mayfly.core.test.HelloSpringConditionBean,\
-com.jie6mm.mayfly.core.mybatis.MybatisDisableConfig,\
-com.jie6mm.mayfly.core.mybatis.MayflyUserConfig
+org.springframework.context.ApplicationListener=\
+com.jie6mm.mayfly.core.security.property.SecurityProperty

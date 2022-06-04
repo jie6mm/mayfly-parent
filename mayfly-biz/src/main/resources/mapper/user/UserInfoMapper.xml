@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jie6mm.mayfly.biz.database.mapper.user.UserInfoMapper">
+
+  <resultMap id="BaseResultMap" type="com.jie6mm.mayfly.pojo.database.user.UserInfoDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_age" jdbcType="INTEGER" property="userAge" />
+    <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+    <result column="user_register_time" jdbcType="TIMESTAMP" property="userRegisterTime" />
+    <result column="user_status" jdbcType="VARCHAR" property="userStatus" />
+    <result column="user_login_type" jdbcType="VARCHAR" property="userLoginType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="flag" jdbcType="TINYINT" property="flag" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, user_id, user_name, user_age, user_email, user_register_time, user_status, user_login_type,
+    create_time, update_time, flag
+  </sql>
+
+  <insert id="insertSelective" parameterType="com.jie6mm.mayfly.pojo.database.user.UserInfoDO">
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userAge != null">
+        user_age,
+      </if>
+      <if test="userEmail != null">
+        user_email,
+      </if>
+      <if test="userRegisterTime != null">
+        user_register_time,
+      </if>
+      <if test="userStatus != null">
+        user_status,
+      </if>
+      <if test="userLoginType != null">
+        user_login_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        #{userAge,jdbcType=INTEGER},
+      </if>
+      <if test="userEmail != null">
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userRegisterTime != null">
+        #{userRegisterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userStatus != null">
+        #{userStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="userLoginType != null">
+        #{userLoginType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    update user_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userId != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="user_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userName != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="user_age = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userAge != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userAge,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="user_email = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userEmail != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userEmail,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="user_register_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userRegisterTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userRegisterTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="user_status = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userStatus != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userStatus,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="user_login_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userLoginType != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userLoginType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.createTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.updateTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.flag != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.flag,jdbcType=TINYINT}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+
+  <insert id="insertOrUpdate" parameterType="com.jie6mm.mayfly.pojo.database.user.UserInfoDO">
+    insert into user_info
+    (id, user_id, user_name, user_age, user_email, user_register_time, user_status, user_login_type, 
+      create_time, update_time, flag)
+    values
+    (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{userAge,jdbcType=INTEGER}, #{userEmail,jdbcType=VARCHAR}, #{userRegisterTime,jdbcType=TIMESTAMP}, 
+      #{userStatus,jdbcType=VARCHAR}, #{userLoginType,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{flag,jdbcType=TINYINT})
+    on duplicate key update 
+    id = #{id,jdbcType=BIGINT}, 
+    user_id = #{userId,jdbcType=VARCHAR}, 
+    user_name = #{userName,jdbcType=VARCHAR}, 
+    user_age = #{userAge,jdbcType=INTEGER}, 
+    user_email = #{userEmail,jdbcType=VARCHAR}, 
+    user_register_time = #{userRegisterTime,jdbcType=TIMESTAMP}, 
+    user_status = #{userStatus,jdbcType=VARCHAR}, 
+    user_login_type = #{userLoginType,jdbcType=VARCHAR}, 
+    create_time = #{createTime,jdbcType=TIMESTAMP}, 
+    update_time = #{updateTime,jdbcType=TIMESTAMP}, 
+    flag = #{flag,jdbcType=TINYINT}
+  </insert>
+
+  <insert id="insertOrUpdateSelective" parameterType="com.jie6mm.mayfly.pojo.database.user.UserInfoDO">
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userAge != null">
+        user_age,
+      </if>
+      <if test="userEmail != null">
+        user_email,
+      </if>
+      <if test="userRegisterTime != null">
+        user_register_time,
+      </if>
+      <if test="userStatus != null">
+        user_status,
+      </if>
+      <if test="userLoginType != null">
+        user_login_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        #{userAge,jdbcType=INTEGER},
+      </if>
+      <if test="userEmail != null">
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userRegisterTime != null">
+        #{userRegisterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userStatus != null">
+        #{userStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="userLoginType != null">
+        #{userLoginType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=TINYINT},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        user_age = #{userAge,jdbcType=INTEGER},
+      </if>
+      <if test="userEmail != null">
+        user_email = #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userRegisterTime != null">
+        user_register_time = #{userRegisterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userStatus != null">
+        user_status = #{userStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="userLoginType != null">
+        user_login_type = #{userLoginType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="selectByAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from user_info
+    <where>
+      <if test="userId != null">
+        and user_id=#{userId,jdbcType=VARCHAR}
+      </if>
+      <if test="userName != null">
+        and user_name=#{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="userAge != null">
+        and user_age=#{userAge,jdbcType=INTEGER}
+      </if>
+      <if test="userEmail != null">
+        and user_email=#{userEmail,jdbcType=VARCHAR}
+      </if>
+      <if test="userRegisterTime != null">
+        and user_register_time=#{userRegisterTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="userStatus != null">
+        and user_status=#{userStatus,jdbcType=VARCHAR}
+      </if>
+      <if test="userLoginType != null">
+        and user_login_type=#{userLoginType,jdbcType=VARCHAR}
+      </if>
+      <if test="id != null">
+        and id=#{id,jdbcType=BIGINT}
+      </if>
+      <if test="createTime != null">
+        and create_time=#{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null">
+        and update_time=#{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="flag != null">
+        and flag=#{flag,jdbcType=TINYINT}
+      </if>
+    </where>
+  </select>
+</mapper>

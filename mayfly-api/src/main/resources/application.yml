@@ -2,7 +2,9 @@ server:
   port: 5050
 
 mayfly:
-  mysql:
-    enable: false
+  database:
+    enable: true
+    core:
+      enable: true
     user:
-      enable: false
+      enable: true
