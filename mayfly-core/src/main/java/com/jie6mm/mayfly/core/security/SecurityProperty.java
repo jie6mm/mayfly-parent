@@ -1,4 +1,4 @@
-package com.jie6mm.mayfly.core.security.property;
+package com.jie6mm.mayfly.core.security;
 
 import com.jie6mm.mayfly.tool.log.ApplicationStartingUpLog;
 import lombok.extern.slf4j.Slf4j;

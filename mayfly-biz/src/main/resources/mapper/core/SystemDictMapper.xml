@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jie6mm.mayfly.biz.database.mapper.core.SystemDictMapper">
+<mapper namespace="com.jie6mm.mayfly.biz.system.database.mapper.core.SystemDictMapper">
     <resultMap id="BaseResultMap" type="com.jie6mm.mayfly.pojo.database.core.SystemDictDO">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="pid" jdbcType="BIGINT" property="pid"/>

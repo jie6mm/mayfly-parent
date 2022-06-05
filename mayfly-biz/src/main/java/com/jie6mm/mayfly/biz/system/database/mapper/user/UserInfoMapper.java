@@ -1,4 +1,6 @@
-package com.jie6mm.mayfly.biz.database.mapper.user;
+package com.jie6mm.mayfly.biz.system.database.mapper.user;
+import org.apache.ibatis.annotations.Param;
+import java.util.Date;
 
 import com.jie6mm.mayfly.pojo.database.user.UserInfoDO;
 
@@ -21,4 +23,6 @@ public interface UserInfoMapper {
     int insertOrUpdateSelective(UserInfoDO record);
 
     List<UserInfoDO> selectByAll(UserInfoDO userInfoDO);
+
+    UserInfoDO selectOneByAll(UserInfoDO userInfoDO);
 }

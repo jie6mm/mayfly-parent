@@ -1,6 +1,6 @@
-package com.jie6mm.mayfly.biz.database.repository.user;
+package com.jie6mm.mayfly.biz.system.database.repository.user;
 
-import com.jie6mm.mayfly.biz.database.mapper.user.UserInfoMapper;
+import com.jie6mm.mayfly.biz.system.database.mapper.user.UserInfoMapper;
 import com.jie6mm.mayfly.pojo.database.user.UserInfoDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,5 +30,18 @@ public class UserInfoRepository {
         return Optional.ofNullable(userInfoDO)
                 .map(condition -> mapper.selectByAll(condition))
                 .orElse(Collections.emptyList());
+    }
+
+    /**
+     * 根据username获取UserinfoDTO对象
+     * @param username
+     * @return
+     */
+    public UserInfoDO queryUserInfoByUsername(String username) {
+        return Optional.ofNullable(username)
+                .map(condition -> mapper.selectOneByAll(
+                        UserInfoDO.builder().username(condition).build()
+                ))
+                .orElse(null);
     }
 }

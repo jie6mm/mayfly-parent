@@ -28,7 +28,7 @@ import javax.sql.DataSource;
         "mayfly.database.enable",
         "mayfly.database.core.enable"
 }, havingValue = "true")
-@MapperScan(basePackages = "com.jie6mm.mayfly.biz.database.mapper.core", sqlSessionFactoryRef = "mayflyCoreSqlSessionFactory")
+@MapperScan(basePackages = "com.jie6mm.mayfly.biz.system.database.mapper.core", sqlSessionFactoryRef = "mayflyCoreSqlSessionFactory")
 public class DbMayflyCoreConfig {
 
     @Value("${mayfly.database.address:}")

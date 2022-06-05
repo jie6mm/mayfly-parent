@@ -1,4 +1,4 @@
-package com.jie6mm.mayfly.biz.database.mapper.core;
+package com.jie6mm.mayfly.biz.system.database.mapper.core;
 
 import com.jie6mm.mayfly.pojo.database.core.SystemDictDO;
 

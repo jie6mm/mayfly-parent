@@ -1,7 +1,7 @@
 package com.jie6mm.mayfly.api.controller;
 
-import com.jie6mm.mayfly.biz.database.repository.core.SystemDictRepository;
-import com.jie6mm.mayfly.biz.database.repository.user.UserInfoRepository;
+import com.jie6mm.mayfly.biz.system.database.repository.core.SystemDictRepository;
+import com.jie6mm.mayfly.biz.system.database.repository.user.UserInfoRepository;
 import com.jie6mm.mayfly.pojo.database.core.SystemDictDO;
 import com.jie6mm.mayfly.pojo.database.user.UserInfoDO;
 import lombok.RequiredArgsConstructor;

@@ -1,2 +1,2 @@
 org.springframework.context.ApplicationListener=\
-com.jie6mm.mayfly.core.security.property.SecurityProperty
+com.jie6mm.mayfly.core.security.SecurityProperty

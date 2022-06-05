@@ -27,7 +27,7 @@ import javax.sql.DataSource;
         "mayfly.database.enable",
         "mayfly.database.user.enable"
 }, havingValue = "true")
-@MapperScan(basePackages = "com.jie6mm.mayfly.biz.database.mapper.user", sqlSessionFactoryRef = "mayflyUserSqlSessionFactory")
+@MapperScan(basePackages = "com.jie6mm.mayfly.biz.system.database.mapper.user", sqlSessionFactoryRef = "mayflyUserSqlSessionFactory")
 public class DbMayflyUserConfig {
 
     @Value("${mayfly.database.address:}")

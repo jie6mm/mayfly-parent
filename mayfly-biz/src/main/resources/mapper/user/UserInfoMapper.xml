@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jie6mm.mayfly.biz.database.mapper.user.UserInfoMapper">
+<mapper namespace="com.jie6mm.mayfly.biz.system.database.mapper.user.UserInfoMapper">
 
   <resultMap id="BaseResultMap" type="com.jie6mm.mayfly.pojo.database.user.UserInfoDO">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
-    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="user_age" jdbcType="INTEGER" property="userAge" />
     <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
     <result column="user_register_time" jdbcType="TIMESTAMP" property="userRegisterTime" />
@@ -17,7 +17,7 @@
   </resultMap>
 
   <sql id="Base_Column_List">
-    id, user_id, user_name, user_age, user_email, user_register_time, user_status, user_login_type,
+    id, user_id, username, user_age, user_email, user_register_time, user_status, user_login_type,
     create_time, update_time, flag
   </sql>
 
@@ -30,8 +30,8 @@
       <if test="userId != null">
         user_id,
       </if>
-      <if test="userName != null">
-        user_name,
+      <if test="username != null">
+        username,
       </if>
       <if test="userAge != null">
         user_age,
@@ -65,8 +65,8 @@
       <if test="userId != null">
         #{userId,jdbcType=VARCHAR},
       </if>
-      <if test="userName != null">
-        #{userName,jdbcType=VARCHAR},
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="userAge != null">
         #{userAge,jdbcType=INTEGER},
@@ -105,10 +105,10 @@
           </if>
         </foreach>
       </trim>
-      <trim prefix="user_name = case" suffix="end,">
+      <trim prefix="username = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          <if test="item.userName != null">
-            when id = #{item.id,jdbcType=BIGINT} then #{item.userName,jdbcType=VARCHAR}
+          <if test="item.username != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.username,jdbcType=VARCHAR}
           </if>
         </foreach>
       </trim>
@@ -177,24 +177,24 @@
 
   <insert id="insertOrUpdate" parameterType="com.jie6mm.mayfly.pojo.database.user.UserInfoDO">
     insert into user_info
-    (id, user_id, user_name, user_age, user_email, user_register_time, user_status, user_login_type, 
-      create_time, update_time, flag)
+    (id, user_id, username, user_age, user_email, user_register_time, user_status, user_login_type,
+    create_time, update_time, flag)
     values
-    (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
-      #{userAge,jdbcType=INTEGER}, #{userEmail,jdbcType=VARCHAR}, #{userRegisterTime,jdbcType=TIMESTAMP}, 
-      #{userStatus,jdbcType=VARCHAR}, #{userLoginType,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{flag,jdbcType=TINYINT})
-    on duplicate key update 
-    id = #{id,jdbcType=BIGINT}, 
-    user_id = #{userId,jdbcType=VARCHAR}, 
-    user_name = #{userName,jdbcType=VARCHAR}, 
-    user_age = #{userAge,jdbcType=INTEGER}, 
-    user_email = #{userEmail,jdbcType=VARCHAR}, 
-    user_register_time = #{userRegisterTime,jdbcType=TIMESTAMP}, 
-    user_status = #{userStatus,jdbcType=VARCHAR}, 
-    user_login_type = #{userLoginType,jdbcType=VARCHAR}, 
-    create_time = #{createTime,jdbcType=TIMESTAMP}, 
-    update_time = #{updateTime,jdbcType=TIMESTAMP}, 
+    (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
+    #{userAge,jdbcType=INTEGER}, #{userEmail,jdbcType=VARCHAR}, #{userRegisterTime,jdbcType=TIMESTAMP},
+    #{userStatus,jdbcType=VARCHAR}, #{userLoginType,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+    #{updateTime,jdbcType=TIMESTAMP}, #{flag,jdbcType=TINYINT})
+    on duplicate key update
+    id = #{id,jdbcType=BIGINT},
+    user_id = #{userId,jdbcType=VARCHAR},
+    username = #{username,jdbcType=VARCHAR},
+    user_age = #{userAge,jdbcType=INTEGER},
+    user_email = #{userEmail,jdbcType=VARCHAR},
+    user_register_time = #{userRegisterTime,jdbcType=TIMESTAMP},
+    user_status = #{userStatus,jdbcType=VARCHAR},
+    user_login_type = #{userLoginType,jdbcType=VARCHAR},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    update_time = #{updateTime,jdbcType=TIMESTAMP},
     flag = #{flag,jdbcType=TINYINT}
   </insert>
 
@@ -207,8 +207,8 @@
       <if test="userId != null">
         user_id,
       </if>
-      <if test="userName != null">
-        user_name,
+      <if test="username != null">
+        username,
       </if>
       <if test="userAge != null">
         user_age,
@@ -243,8 +243,8 @@
       <if test="userId != null">
         #{userId,jdbcType=VARCHAR},
       </if>
-      <if test="userName != null">
-        #{userName,jdbcType=VARCHAR},
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="userAge != null">
         #{userAge,jdbcType=INTEGER},
@@ -279,8 +279,8 @@
       <if test="userId != null">
         user_id = #{userId,jdbcType=VARCHAR},
       </if>
-      <if test="userName != null">
-        user_name = #{userName,jdbcType=VARCHAR},
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="userAge != null">
         user_age = #{userAge,jdbcType=INTEGER},
@@ -317,8 +317,49 @@
       <if test="userId != null">
         and user_id=#{userId,jdbcType=VARCHAR}
       </if>
-      <if test="userName != null">
-        and user_name=#{userName,jdbcType=VARCHAR}
+      <if test="username != null">
+        and username=#{username,jdbcType=VARCHAR}
+      </if>
+      <if test="userAge != null">
+        and user_age=#{userAge,jdbcType=INTEGER}
+      </if>
+      <if test="userEmail != null">
+        and user_email=#{userEmail,jdbcType=VARCHAR}
+      </if>
+      <if test="userRegisterTime != null">
+        and user_register_time=#{userRegisterTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="userStatus != null">
+        and user_status=#{userStatus,jdbcType=VARCHAR}
+      </if>
+      <if test="userLoginType != null">
+        and user_login_type=#{userLoginType,jdbcType=VARCHAR}
+      </if>
+      <if test="id != null">
+        and id=#{id,jdbcType=BIGINT}
+      </if>
+      <if test="createTime != null">
+        and create_time=#{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null">
+        and update_time=#{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="flag != null">
+        and flag=#{flag,jdbcType=TINYINT}
+      </if>
+    </where>
+  </select>
+
+  <select id="selectOneByAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from user_info
+    <where>
+      <if test="userId != null">
+        and user_id=#{userId,jdbcType=VARCHAR}
+      </if>
+      <if test="username != null">
+        and username=#{username,jdbcType=VARCHAR}
       </if>
       <if test="userAge != null">
         and user_age=#{userAge,jdbcType=INTEGER}

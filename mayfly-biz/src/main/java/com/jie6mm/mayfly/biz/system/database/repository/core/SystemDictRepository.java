@@ -1,7 +1,7 @@
-package com.jie6mm.mayfly.biz.database.repository.core;
+package com.jie6mm.mayfly.biz.system.database.repository.core;
 
 
-import com.jie6mm.mayfly.biz.database.mapper.core.SystemDictMapper;
+import com.jie6mm.mayfly.biz.system.database.mapper.core.SystemDictMapper;
 import com.jie6mm.mayfly.pojo.database.core.SystemDictDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
