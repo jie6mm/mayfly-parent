@@ -1,0 +1,51 @@
+{
+  "properties": [
+    {
+      "name": "mayfly.mybatis.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否启用Mysql",
+      "defaultValue": null,
+      "deprecation": {
+        "level": "error",
+        "reason": "已弃用",
+        "replacement": "mayfly.database.enable"
+      }
+    },
+    {
+      "name": "mayfly.database.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否启用Mysql",
+      "defaultValue": null
+    },
+    {
+      "name": "mayfly.database.address",
+      "type": "java.lang.String",
+      "description": "数据库连接地址: ${IP:PORT}}",
+      "defaultValue": null
+    },
+    {
+      "name": "mayfly.database.username",
+      "type": "java.lang.String",
+      "description": "连接数据库的用户名，默认值root",
+      "defaultValue": "root"
+    },
+    {
+      "name": "mayfly.database.password",
+      "type": "java.lang.String",
+      "description": "连接数据库的密码，默认值root",
+      "defaultValue": "root"
+    },
+    {
+      "name": "mayfly.database.core.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否启用[mayfly_core]数据库",
+      "defaultValue": false
+    },
+    {
+      "name": "mayfly.database.user.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否启用[mayfly_user]数据库",
+      "defaultValue": false
+    }
+  ]
+}
