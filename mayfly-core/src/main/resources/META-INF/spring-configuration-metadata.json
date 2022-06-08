@@ -38,13 +38,13 @@
     {
       "name": "mayfly.database.core.enable",
       "type": "java.lang.Boolean",
-      "description": "是否启用[mayfly_core]数据库",
+      "description": "是否启用[mayfly_core]数据库连接",
       "defaultValue": false
     },
     {
       "name": "mayfly.database.user.enable",
       "type": "java.lang.Boolean",
-      "description": "是否启用[mayfly_user]数据库",
+      "description": "是否启用[mayfly_user]数据库连接",
       "defaultValue": false
     }
   ],
