@@ -47,5 +47,20 @@
       "description": "是否启用[mayfly_user]数据库",
       "defaultValue": false
     }
+  ],
+  "hints": [
+    {
+      "name": "mayfly.database.enable",
+      "values": [
+        {
+          "value": "true",
+          "description": "启用Mysql, 启用后须启用最少一个连接，否则将影响项目启动"
+        },
+        {
+          "value": "false",
+          "description": "禁用Mysql，禁用后所有启用的连接也将被禁用，不影响项目启动"
+        }
+      ]
+    }
   ]
 }
